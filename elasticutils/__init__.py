@@ -1449,6 +1449,9 @@ class S(PythonMixin):
            this method.
 
         """
+        if self.type:
+            return self.type.get_es()
+
         # .es() calls are incremental, so we go through them all and
         # update bits that are specified.
         args = {}
